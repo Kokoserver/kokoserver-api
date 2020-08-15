@@ -9,7 +9,7 @@ jwt_response_payload_handler = api_settings.JWT_RESPONSE_PAYLOAD_HANDLER
 
 from django.utils import timezone
 
-expire_delta = settings.JWT_AUTH['JWT_REFRESH_EXPIRATION_DELTA']
+# expire_delta = settings.JWT_AUTH['JWT_REFRESH_EXPIRATION_DELTA']
 
 User = get_user_model()
 
@@ -67,8 +67,8 @@ class Serializer(serializers.ModelSerializer):
     #     response = jwt_response_payload_handler(token, user, request=context["request"])
     #     return response
      
-    def get_expire(self, obj):
-        expire = timezone.now() + expire_delta - datetime.timedelta(seconds=200)
+    # def get_expire(self, obj):
+    #     expire = timezone.now() + expire_delta - datetime.timedelta(seconds=200)
     
     def validate_email(self, value):
         user_obj = User.objects.filter(email__iexact=value)
