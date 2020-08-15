@@ -9,7 +9,7 @@ jwt_response_payload_handler = api_settings.JWT_RESPONSE_PAYLOAD_HANDLER
 
 from django.utils import timezone
 
-# expire_delta = settings.JWT_AUTH['JWT_REFRESH_EXPIRATION_DELTA']
+expire_delta = settings.JWT_AUTH['JWT_REFRESH_EXPIRATION_DELTA']
 
 User = get_user_model()
 
