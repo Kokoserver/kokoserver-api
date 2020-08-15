@@ -21,6 +21,7 @@ from account.api.views import (AuthAPIView, RegisterApiView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("article/", include("api_basic.urls")),
     path('api/auth/jwt', obtain_jwt_token),
     path('api/auth/refresh', refresh_jwt_token),
     path('api/auth/', AuthAPIView.as_view()),

@@ -67,8 +67,8 @@ class Serializer(serializers.ModelSerializer):
     #     response = jwt_response_payload_handler(token, user, request=context["request"])
     #     return response
      
-    def get_expire(self, obj):
-        expire = timezone.now() + expire_delta - datetime.timedelta(seconds=200)
+    # def get_expire(self, obj):
+    #     expire = timezone.now() + expire_delta - datetime.timedelta(seconds=200)
     
     def validate_email(self, value):
         user_obj = User.objects.filter(email__iexact=value)

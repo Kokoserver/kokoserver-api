@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third party
     'rest_framework',
+    'rest_framework.authtoken',
     # apps
+    'account',
     'api',
-    'account'
+    'api_basic'
 ]
 
 MIDDLEWARE = [
@@ -126,4 +128,11 @@ MEDIA_URL  = "/media/"
 
 STATIC_URL = '/static/'
 
-from .apiconf.main import *
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
+
+# from .apiconf.main import *

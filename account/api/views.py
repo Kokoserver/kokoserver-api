@@ -16,7 +16,6 @@ User = get_user_model()
 
 class AuthAPIView(APIView):
     permission_classes = [permissions.AllowAny]
-    
     def post(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return Response({"mess":"user is already authenticated"})
